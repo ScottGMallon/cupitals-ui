@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getPostByID } from '../api/strapi'
 import ReactMarkdown from 'markdown-to-jsx'
-import { Avatar, Card, CardContent, Container, Divider, useTheme } from '@mui/material'
+import { Avatar, Card, CardContent, CardMedia, Container, Divider, useTheme } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
@@ -78,6 +78,16 @@ export function Post() {
       <Box>
         {post &&
           <Card>
+            <CardMedia sx={{
+              height: '50vmin',
+              backgroundPosition: 'top center',
+              backgroundSize: 'cover'
+            }}
+              height='100'
+              component="img"
+              image={makePhotoURL(post.attributes.image.data.attributes.url)}
+              alt={post.attributes.image.data.attributes.alternativeText}
+            />
             <CardContent sx={{ display: 'flex', flexDirection: 'column', p: 3, gap: '20px', backgroundColor: theme.palette.background.paper }}>
               <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Typography align='center' variant='h3' sx={{ mt: 5, pb: 5 }}>{post.attributes.title}</Typography>
