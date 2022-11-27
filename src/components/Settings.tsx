@@ -57,10 +57,9 @@ export default function Settings() {
                 <Box
                     sx={{
                         p: 5,
-                        paddingTop: '40px',
                         alignItems: 'center'
                     }}>
-                    <Typography variant='h4' sx={{ marginBottom: '10px', textAlign: 'center' }}>Settings</Typography>
+                    <Typography variant='h5' sx={{ marginBottom: '20px', textAlign: 'center' }}>Settings</Typography>
                     {settings && switchSettings.map(s => <SwitchSetting key={s.text + '-setting'} icon={s.icon} text={s.text} handleClick={s.handleClick} isChecked={s.isChecked} />)}
                 </Box>
 

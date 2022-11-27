@@ -78,9 +78,9 @@ export function Post() {
       <Box>
         {post &&
           <Card>
-            <CardContent sx={{ display: 'flex', flexDirection: 'column', p: 5, gap: '20px', backgroundColor: theme.palette.background.paper }}>
+            <CardContent sx={{ display: 'flex', flexDirection: 'column', p: 3, gap: '20px', backgroundColor: theme.palette.background.paper }}>
               <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <Typography align='center' variant='h3' sx={{ mt: 5, fontSize: '5vh', pb: 5 }}>{post.attributes.title}</Typography>
+                <Typography align='center' variant='h3' sx={{ mt: 5, pb: 5 }}>{post.attributes.title}</Typography>
                 <Typography align='center' variant='subtitle1' sx={{ pb: 5 }}>{post.attributes.description}</Typography>
                 <Author post={post} small={false} />
               </Box>
